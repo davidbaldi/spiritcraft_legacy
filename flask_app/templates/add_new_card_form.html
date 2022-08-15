@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/style_add_new_card_form.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Card Form</title>
+</head>
+<body>
+    <div>
+        <form action="/cards/process_new_card" class="form_column" method="post">
+            <label for="name">
+                Card Name:
+                <input type="text" id="name" name="name">
+            </label>
+            <label for="type">
+                Card Type:
+                <input type="text" id="type" name="type">
+            </label>
+            <label for="card_set">
+                Card Set:
+                <input type="text" id="card_set" name="card_set">
+            </label>
+            <label for="expansion">
+                Expansion:
+                <input type="text" id="expansion" name="expansion">
+            </label>
+            <label for="release_date" class="add_card_requirements">
+                Release Date:
+                <input type="date" id="release_date" name="release_date">
+            </label>
+            <label for="description">
+                Description:
+                <input type="text" id="description" name="description">
+            </label>
+            <label for="is_editors_choice" class="add_card_requirements">
+                Editors choice?
+                <input type="number" id="is_editors_choice" name="is_editors_choice">
+            </label>
+            <label for="is_players_pick" class="add_card_requirements">
+                Player's Pick?:
+                <input type="number" id="is_players_pick" name="is_players_pick">
+            </label>
+            <label for="is_collectable_only" class="add_card_requirements">
+                Collectable only?
+                <input type="number" id="is_collectable_only" name="is_collectable_only">
+            </label>
+            <label for="status">
+                Status:
+                <input type="text" id="status" name="status">
+            </label>
+            <label for="quantity" class="add_card_requirements">
+                Quantity:
+                <input type="number" id="quantity" name="quantity">
+            </label>
+            <label for="is_horizontal" class="add_card_requirements">
+                Horizontal?
+                <input type="number" id="is_horizontal" name="is_horizontal">
+            </label>
+            <label for="image_url">
+                URL:
+                <input type="text" id="image_url" name="image_url">
+            </label>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

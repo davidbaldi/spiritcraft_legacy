@@ -1,0 +1,268 @@
+* {
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: Calibri, sans-serif;
+}
+
+body {
+    /* background-image: url('mandala_bkgd3.png'); */
+    background-repeat: no-repeat;
+    background-attachment: inherit;
+    background-size: auto 100vw
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+}
+
+.container_bottom {
+    /* outline: 1 pt solid rebeccapurple; */
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+.center_column {
+    /* outline: 1 pt solid red; */
+    margin: auto;
+    width: 65%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.navigation_bar_banner {
+    /* outline: 1pt solid red; */
+    /* background-color: aqua; */
+    margin: auto;
+    margin-bottom: 1%;
+    width: 90%;
+    height: 10%;
+}
+
+.navigation_bar_links {
+    /* background-color:aquamarine; */
+    margin: auto;
+    width: 90%;
+    height: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu_links {
+    /* border: solid rebeccapurple; */
+    border-width: 1%;
+    border-radius: 100px;
+    /* background-color: aqua; */
+    margin: 1%;
+    height: 95%;
+    width: 16.66%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+    font-size: larger;
+    /* Need shadow on links */
+    box-shadow: inset;
+}
+
+.page_intro {
+    /* background-color: aqua; */
+    margin: auto;
+    padding: 2%;
+    border-bottom: 2pt solid black;
+    width: 100%;
+    height: 5%;
+}
+
+.card_container {
+    /* background-color: bisque; */
+    margin: auto;
+    width: 95%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    padding-left: 8px;
+    padding-right: 17px;
+    box-sizing: content-box;
+}
+
+.card {
+    margin: 1%;
+    margin-top: 7.5%;
+}
+
+.trading_card {
+    width: 2.5in;
+    height: 3.5in;
+    /* border: 2pt solid black; */
+    border-radius: 12.5px;
+    box-shadow: rgba(0, 0, 0, 0.25) 10px 10px 10px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.card_info {
+    margin-bottom: 25%;
+    /* border: 1pt solid purple; */
+    border-radius: 10px;
+    height: 1.5in;
+    display: flex;
+    flex-direction: column;
+}
+
+.card_text {
+    /* background-color: aqua; */
+    border-radius: 10px;
+    width: 2.5in;
+    height: 70%;
+    display: flex;
+    flex-direction: row;
+}
+
+/* .card_text_left {
+    outline: 1pt solid red;
+    margin-right: 1%;
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+} */
+
+.card_text_row {
+    /* outline: 1pt solid blue; */
+    height: 33%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.card_text_right {
+    /* outline: 1pt solid yellowgreen; */
+    height: 80%;
+    flex-grow: 15;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hearts {
+    width: 60px;
+    height: 60px;
+}
+
+/* .rotate_image {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+    outline: 2pt solid black;
+    border-radius: 12.5px;
+    width: 5in;
+    height: 7in;
+    margin-bottom: 3%;
+} */
+
+.extender {
+    background-color: aqua;
+    width: 100px;
+    height: 100px;
+}
+
+.card_by_itself_vertical {
+    outline: 2pt solid black;
+    border-radius: 12.5px;
+    width: 5in;
+    height: 7in;
+    margin-bottom: 3%;
+}
+
+.card_by_itself_horizontal {
+    outline: 2pt solid black;
+    border-radius: 12.5px;
+    width: 5in;
+    height: 7in;
+    margin-bottom: 3%;
+
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.text_at_right {
+    margin: 1%;
+    margin-top: 7.5%;
+    width: 50%;
+    height: 100vh;
+}
+
+.small_card_div {
+    margin: 1%;
+}
+
+.card_tile {
+    outline: 2pt solid black;
+    border-radius: 12.5px;
+    width: 2.25in;
+    height: 3.15in;
+}
+
+.card_tile_text {
+    
+}
+
+.already_faved_error {
+    width: 100%;
+    height: 100px;
+    color: red;
+}
+
+.flashes_login {
+    color: red;
+}
+
+/* All menu stuff below from W3 Schools */
+
+.dropbtn {
+    background-color: gray;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: gainsboro;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: gray;}

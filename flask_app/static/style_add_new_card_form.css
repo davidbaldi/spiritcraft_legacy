@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: Calibri, sans-serif;
+}
+
+input {
+    border: 1pt solid black;
+}
+
+.form_column {
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+}
+
+.add_card_requirements {
+    color: red;
+}

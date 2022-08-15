@@ -1,0 +1,160 @@
+<!-- login_and_registration.html-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" class="style">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Welcome, gamers!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+    <body>
+        <div class="container_top">
+            <img src="../static/spiritcraft_spectacular_banner.svg" alt="Spiritcraft Spectacular banner" class="banner" width="500">
+        </div>
+        <div class="container_middle">
+            <div class="flashes_login">
+                {% with messages = get_flashed_messages(category_filter=["must_be_logged_in_error"]) %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <p>* {{ message }}</p>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+
+                {% with messages = get_flashed_messages(category_filter=["not_an_admin_error"]) %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <p>* {{ message }}</p>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
+            <div class="form_and_image_container">
+                <form action="/process_login" method="post">
+                    <fieldset class="fieldset_login">
+                        <legend>Login</legend>
+                        <label for="username">username</label>
+                        <input type="text" id="username" name="username" class="input_username" placeholder="username">
+                        <label for="password">password</label>
+                        <input type="password" id="password" name="password" class="input_password" placeholder="password">
+                        <div class="label_and_checkbox">
+                            <label for="keep_me_signed_in" class="keep_me_signed_in">Keep me signed in, please</label>
+                            <input type="checkbox" class="checkbox">                        
+                        </div>
+                        <div class="login_button_container">
+                            <button type="submit">Log in</button>
+                        </div>
+                    </fieldset>
+                </form>
+            <div class="python_image">
+                <img src="../static/pythons.jpg" alt="Black-and-white ink drawing of pythons" class="pythons_image" width="400" height="600">
+            </div>
+            </div>
+            <div class="column_registration">
+                <form action="/process_registration" method="post">
+                <fieldset>
+                    <legend>Registration</legend>
+                    <fieldset class="identification">
+                        <legend>Identification</legend>
+                        <label for="first_name">first name</label>
+                        <input type="text" id="first_name" name="first_name" class="first_name" placeholder="first name">
+                        <label for="last_name">last name</label>
+                        <input type="text" id="last_name" name="last_name" class="last_name" placeholder="last name">
+                        <label for="email">email</label>
+                        <input type="email" id="email" name="email" class="email" placeholder="email">
+                    </fieldset>
+                    <fieldset class="credentials">
+                        <legend>Credentials</legend>
+                        <label for="username">username</label>
+                        <input type="text" id="username" name="username" class="input_username" placeholder="username">
+                        <label for="password">password</label>
+                        <input type="password" id="password" name="password" class="input_password" placeholder="password">
+                        <label for="confirm_password">confirm password</label>
+                        <input type="password" id="confirm_password" name="confirm_password" class="input_confirm_password" placeholder="confirm password">
+                    </fieldset>
+                    <fieldset class="address">
+                        <legend>Address</legend>
+                        <label for="street">street</label>
+                        <input type="text" id="street" name="street" class="street" placeholder="street">
+                        <label for="city">city</label>
+                        <input type="text" id="city" name="city" class="city" placeholder="city">
+                        <div class="state_and_zip">
+                            <div class="input_state">
+                                <label for="state">state&nbsp;</label>
+                                <input type="text" id="state" name="state" class="state" placeholder="state">
+                            </div>
+                            &nbsp;&nbsp;&nbsp;
+                            <div class="input_zip">
+                                <label for="zip">zip</label>
+                                <input type="text" id="zip" name="zip" class="zip" placeholder="zip">
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="optionals">
+                        
+                            <fieldset>
+                                <legend>Optionals</legend>
+                                <div>
+                                    <label for="birthday">birthday
+                                        <input type="date" id="birthday" name="birthday" class="birthday" placeholder="birthday">
+                                    </label>
+                                </div>
+                                <div>
+                                    <div class="birthday_and_christmas_and_newsletter">
+                                        <label for="birthday" class="birthday_opt_in">Yes, send me a birthday card next time 'round!</label>
+                                        <input type="hidden" name="get_birthday" value="0">
+                                        <input type="checkbox" id="birthday_opt_in" name="get_birthday" class="checkbox" value="1" checked>
+                                    </div>
+                                    <div class="birthday_and_christmas_and_newsletter">
+                                        <label for="christmas_opt_in" class="christmas_opt_in">Yes, send me a Christmas card, too!</label>
+                                        <input type="hidden" name="get_christmas" value="0">
+                                        <input type="checkbox" id="christmas_opt_in" name="get_christmas" class="checkbox" value="1" checked>
+                                    </div>
+                                    <div class="birthday_and_christmas_and_newsletter">
+                                        <label for="newsletter" class="newsletter">I'd like the <i>occasional</i> newsletter...</label>
+                                        <input type="hidden" name="get_newsletter" value="0">
+                                        <input type="checkbox" id="newsletter" name="get_newsletter" class="checkbox" value="1">
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <fieldset class="invitation_code">
+                                <legend>Invitation Code</legend>
+                                <input type="text" id="invitation_code" name="invitation_code" class="invitation_code" placeholder="invitation code">
+                            </fieldset>
+                            <div class="login_button_container">
+                                <button type="submit">Sign me up and give me free stuff!</button>
+                            </div>
+                    </form>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="flashes_registration">
+                {% with messages = get_flashed_messages(category_filter=["registration_error"]) %}
+                    {% if messages %}
+                        {% for message in messages %}
+                        <p style="color: red;">* {{ message }}</p>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}                
+            </div>
+        </div>
+        <div class="container_footer">
+            <div class="container_footer_left">
+
+            </div>
+            <div class="container_footer_center_left">
+                <a href="#" style="text-decoration: none">I'm a loved one</a>
+                <a href="#" style="text-decoration: none">I'm an employer</a>
+            </div>
+
+            <div class="container_footer_center_right">
+                SupernovaShaman &copy; Powered by Python
+            </div>
+            <div class="container_footer_right">
+
+            </div>
+        </div>
+    </body>
+</html>

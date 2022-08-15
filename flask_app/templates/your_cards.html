@@ -1,0 +1,24 @@
+<!-- user.html -->
+{% extends "base.html" %}
+
+{% block content %}
+    <p>
+        <div class="already_faved_error">
+            {% with messages = get_flashed_messages(category_filter=["already_faved_error"]) %}
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            {% endwith %}
+        </div>
+        {% for one_card in one_user.favorite_cards %}
+            <div class="small_card_div">
+                <a href="/cards/single_card/{{ one_card.name }}">
+                    <img src="/static/cards/{{ one_card.image_url }}" class="card_tile"></img>
+                </a>
+                <div class="card_tile_text">
+                    {{ one_card.name }}
+                </div>
+            </div>
+        {% endfor %}
+    </p>
+{% endblock %}

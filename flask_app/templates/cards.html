@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+<!-- cards.html -->
+
+{% block content %}
+    {% for card in instantiated_cards %}
+        <!-- Begin card -->
+        <div class="card">
+            <div class="card_itself">
+                <a href="/cards/single_card/{{ card.name }}">
+                    <img src="/static/cards/{{ card.image_url }}" class="trading_card" alt="Trading card">
+                </a>
+            </div>
+            <div class="card_info">
+                <div class="card_text">
+                    <div class="card_text_left">
+                        <div class="card_text_row">
+                            &nbsp &nbsp<b><i>{{ card.card_name }}</i></b>
+                        </div>
+                        <!-- <div class="card_text_row">
+                            &nbsp &nbsp<b><i>{{ card.type }}</i></b> &nbsp; type
+                        </div> -->
+                        <!-- <div class="card_text_row">
+                            &nbsp &nbsp<b><i>{{ card.card_set }}</i></b> &nbsp; set
+                        </div> -->
+                        <div class="card_text_row">
+                            {% if card.is_editors_choice %}
+                                &nbsp &nbsp<span style="color: yellowgreen;"><strong>Editor's Choice!</strong></span>
+                            <!-- if card.is_players_choice -->
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="card_text_right">
+                        {% if card.card_id not in users_favorites.favorite_cards %}
+                            <a href="/cards/process_card_like/{{ card.card_id }}">
+                                <img src="/static/heart_unliked2.gif" class="hearts" alt="Unliked symbol">
+                            </a>
+                        {% elif card.card_id in users_favorites.favorite_cards %}
+                            <a href="/cards/process_card_unlike/{{ card.card_id }}">
+                                <img src="/static/heart_liked2.gif" class="hearts" alt="Liked symbol">
+                            </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End card -->
+    {% endfor %}
+{% endblock %}

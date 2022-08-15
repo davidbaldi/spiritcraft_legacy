@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+<!-- cards.html -->
+
+{% block content %}
+    {% for card in instantiated_cards %}
+        <!-- Begin card -->
+        <div class="card">
+            <div class="card_itself">
+                <a href="/cards/single_card/{{ card.name }}">
+                    <img src="/static/cards/{{ card.image_url }}" class="trading_card" alt="Trading card">
+                </a>
+            </div>
+            <div class="card_info">
+                <div class="card_text">
+                    <div class="card_text_left">
+                        <div class="card_text_row">
+                            &nbsp &nbsp<b><i>{{ card.card_name }}</i></b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End card -->
+    {% endfor %}
+{% endblock %}

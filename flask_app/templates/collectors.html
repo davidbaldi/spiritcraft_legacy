@@ -1,0 +1,24 @@
+<!-- collectors.html -->
+{% extends "base.html" %}
+
+{% block content %}
+    <table>
+        <thead>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Their Cards</th>
+        </thead>
+        <tbody>
+            {% for user in list_of_all_users %}
+                <tr>
+                    <td>{{ user.first_name }}</td>
+                    <td>{{ user.last_name }}</td>
+                    <td>{{ user.email }}</td>
+                    <td><a href="/cards/others_cards/{{ user.username }}">{{ user.username }}'s cards</a></td>
+                </tr>
+                <!-- End profile -->
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

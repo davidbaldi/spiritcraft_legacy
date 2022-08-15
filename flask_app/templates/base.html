@@ -1,0 +1,80 @@
+<!-- base.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{url_for('static', filename='style_base.css')}}" class="style">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="container">
+        <div class="container_bottom">
+            <div class="center_column">
+                <div class="navigation_bar_banner">
+
+                </div>
+                <div class="navigation_bar_links">
+                    <div class="menu_links">
+                        <div class="dropdown">
+                            <button class="dropbtn">Cards</button>
+                            <div class="dropdown-content">
+                                <a href="/cards">All Cards</a>
+                                <a href="/cards/types/spirit">Spirit</a>
+                                <a href="/cards/types/entity">Entities</a>
+                                <a href="/cards/types/item">Items</a>
+                                <a href="/cards/types/event">Events</a>
+                                <a href="/cards/types/paradigm">Paradigms</a>
+                                <a href="/cards/types/god">God</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu_links"><a href="/users" class="no_nav_bar_styling">Collectors</a></div>
+                    <div class="menu_links"><a href="/about" class="no_nav_bar_styling">About</a></div>
+                    <div class="menu_links"><a href="/your_cards" class="no_nav_bar_styling">My Collection</a></div>
+                    <div class="menu_links"><a href="/logout" class="no_nav_bar_styling">Logout</a></div>
+                </div>
+                <div class="page_intro">
+                    
+                </div>
+                <div class="card_container">
+                    {% block content %}
+                        <!-- Begin card -->
+                        <!-- <div class="card">
+                            <div class="card_itself">
+                                <img src="night_sky_bkgd.jpg" class="trading_card" alt="Trading card">
+                            </div>
+                            <div class="card_info">
+                                <div class="card_text">
+                                    <div class="card_text_left">
+                                        <div class="card_text_row">
+                                            &nbsp &nbsp<b><i>Shaman's Call</i></b>
+                                        </div>
+                                        <div class="card_text_row">
+                                            &nbsp &nbsp<b><i>Event</i></b> &nbsp; type
+                                        </div>
+                                        <div class="card_text_row">
+                                            &nbsp &nbsp<b><i>Legacy</i></b> &nbsp; set
+                                        </div>
+                                        <div class="card_text_row">
+                                            &nbsp &nbsp<span style="color: yellowgreen;"><b>Editor's Choice!</b></span>
+                                        </div>
+                                    </div>
+                                    <div class="card_text_right">
+                                        <img src="heart_liked2.gif" class="hearts" alt="Unliked symbol">
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                    <!-- End card -->
+                    {% endblock %}
+                </div>
+                <div class="extender">
+                    Can't find this div!
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

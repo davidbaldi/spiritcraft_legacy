@@ -1,0 +1,73 @@
+<!-- card.html -->
+{% extends "base.html" %}
+
+{% block content %}
+    <!-- Begin card -->
+        {% if card %}
+            <div class="card">
+                <div>
+                    {% if card.is_horizontal == 1 %}
+                        <img src="/static/cards/{{ card.image_url }}" class="card_by_itself_horizontal" alt="Trading card">
+                    {% elif card.is_horizontal == 0 %}
+                        <img src="/static/cards/{{ card.image_url }}" class="card_by_itself_vertical" alt="Trading card">
+                    {% else %}
+                        <img src="/static/cards/{{ card.image_url }}" class="card_by_itself_vertical was_vertical" alt="Trading card">
+                    {% endif %}
+                </div>
+                <div class="card_info">
+                    <div class="card_text">
+                        <div class="card_text_left">
+                            <div class="card_text_row">
+                                &nbsp &nbsp<b><i>{{ card.name }}</i></b>
+                            </div>
+                            <div class="card_text_row">
+                                &nbsp &nbsp<b><i>{{ card.type }}</i></b> &nbsp; type
+                            </div>
+                            <div class="card_text_row">
+                                &nbsp &nbsp<b><i>{{ card.card_set }}</i></b> &nbsp; set
+                            </div>
+                            <div class="card_text_row">
+                                {% if card.is_editors_choice %}
+                                    &nbsp &nbsp<span style="color: yellowgreen;"><b>Editor's Choice!</b></span>
+                                {% endif %}
+                            </div>
+                            <div class="card_text_row">
+                                {% if card.is_players_pick %}
+                                    &nbsp &nbsp<span style="color: blue;"><b>Player's Pick!</b></span>
+                                {% endif %}
+                            </div>
+                            <div class="card_text_row">
+                                {{ card.expansion }}
+                            </div>
+                            <div class="card_text_row">
+                                {{ card.release_date }}
+                            </div>
+                            <div class="card_text_row">
+                                {{ card.description }}
+                            </div>
+                            <div class="card_text_row">
+                                Status: {{ card.status }}
+                            </div>
+                            <div class="card_text_row">
+                                Remaining: {{ card.quantity }}
+                            </div>
+                            <div class="card_text_row">
+                                
+                            </div>
+                            <div class="card_text_row">
+
+                            </div>
+                        </div>
+                        <div class="card_text_right">
+                            <img src="/static/heart_unliked2.gif" class="hearts" alt="Unliked symbol">
+                            <!-- <img src="heart_liked2.gif" class="hearts" alt="Liked symbol"> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="text_at_right">
+            
+        </div>
+        {% endif %}
+    <!-- End card -->
+{% endblock %}

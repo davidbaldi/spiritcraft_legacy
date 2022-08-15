@@ -1,0 +1,14 @@
+<!-- user.html -->
+{% extends "base.html" %}
+
+{% block content %}
+    Here are all of {{ one_user.username }}'s favorite cards!
+    <p>
+        {% for one_card in one_user.favorite_cards %}
+            <div>
+                {{ one_card.name }}
+                <img src="/static/cards/{{ one_card.image_url }}" alt="Card image">
+            </div>
+        {% endfor %}
+    </p>
+{% endblock %}
